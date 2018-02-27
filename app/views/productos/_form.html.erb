@@ -9,22 +9,22 @@
 
           <div class="form-group">
             <label>Marca</label>
-            <%= f.text_field :name, class: "form-control", required: true,  placeholder:"marca" %>
+            <%= f.text_field :marca, class: "form-control", required: true,  placeholder:"marca" %>
           </div>
           
           <div class="form-group">
             <label>SKU</label>
-            <%= f.number_field :name, class: "form-control", required: true,  placeholder:"#sku" %>
+            <%= f.number_field :sku, class: "form-control", required: true,  placeholder:"#sku" %>
           </div>
           
           <div class="form-group">
-            <label>Foto
-            <input type="text" class="form-control" placeholder="url foto">
+            <label>Foto</label>
+            <%= f.text_field :foto, class: "form-control", required: true,  placeholder:"foto" %>
           </div>
           
           <div class="form-group">
             <label>Linea</label>
-            <input type="text" class="form-control" placeholder="linea">
+            <%= f.select :linea_id, options_for_select(Linea.all.collect {|p| [p.name, p.id]} , @producto.linea_id), {}, class: "form-control", required:true %>
           </div>
           
           <button type="submit" class="btn btn-primary">Submit</button>

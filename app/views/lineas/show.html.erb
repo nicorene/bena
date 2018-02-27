@@ -1,4 +1,13 @@
-<p><%= @linea.name %></p>
+<h1><%= @linea.name %></h1>
+
+<% @linea.productos.each do |p| %>
+    <%= image_tag p.foto %> <br>
+    <%= p.name %>
+    <%= p.marca %>
+    <%= p.sku %>
+    <br>
+<% end %>
+<br>
 
 <%= link_to 'Edit', edit_linea_path(@linea) %> |
 <%= link_to 'Back', lineas_path %>
